@@ -9,5 +9,8 @@
     android:layout_height="wrap_content" 
     android:text="Hello World, MainActivity"
     />
+<ImageView android:id="@+id/main_image_view"
+    android:layout_width="640px"
+    android:layout_height="480px"/>
 </LinearLayout>
 

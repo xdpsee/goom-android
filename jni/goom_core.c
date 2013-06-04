@@ -736,7 +736,8 @@ guint32 *goom_update (PluginInfo *goomInfo, gint16 data[2][512],
         /* affichage et swappage des buffers.. */
         goomInfo->cycle++;
         
-        goomInfo->convolve_fx.apply(&goomInfo->convolve_fx,return_val,goomInfo->outputBuf,goomInfo);
+        //goomInfo->convolve_fx.apply(&goomInfo->convolve_fx,return_val,goomInfo->outputBuf,goomInfo);
+        memcpy(goomInfo->outputBuf, return_val, goomInfo->screen.size * sizeof(Pixel)); //The convolve filter looks ugly
         
         return (guint32*)goomInfo->outputBuf;
 }
